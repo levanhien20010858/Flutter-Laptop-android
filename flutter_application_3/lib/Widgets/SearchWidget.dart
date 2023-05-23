@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/Pages/CartPage.dart';
+import 'package:flutter_application_3/Pages/SearchPage.dart';
 
 class SearchWidget extends StatefulWidget {
   @override
@@ -47,7 +49,15 @@ class _SearchWidgetState extends State<SearchWidget> {
                   ),
                   child: TextFormField(
                     onTap: () {
-                      setState(() {});
+                      FocusScope.of(context).requestFocus(FocusNode());
+                      setState(() {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SearchPage(),
+                          ),
+                        );
+                      });
                     },
                     decoration: InputDecoration(
                       hintText: "Bạn tìm kiếm gì ?",
