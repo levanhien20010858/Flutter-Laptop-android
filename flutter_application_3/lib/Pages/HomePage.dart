@@ -5,6 +5,8 @@ import 'package:flutter_application_3/Models/category_model/category_model.dart'
 import 'package:flutter_application_3/Pages/FavoritePage.dart';
 import 'package:flutter_application_3/Pages/OrderPage.dart';
 import 'package:flutter_application_3/Pages/AccountPage.dart';
+import 'package:flutter_application_3/provider/app_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../Models/product_model/product_model.dart';
 
@@ -26,11 +28,14 @@ List<ProductModel> newestList = [];
 
 class _HomePageState extends State<HomePage> {
   // bool _hideNavBar = false;
+  // ignore: unused_field
   int _selectedIndex = 0;
   bool isLoading = false;
 
   @override
   void initState() {
+    // AppProvider appProvider = Provider.of<AppProvider>(context, listen: false);
+    // appProvider.getUserInfoFirebase();
     getCategoryList();
     super.initState();
   }
@@ -44,7 +49,7 @@ class _HomePageState extends State<HomePage> {
     popularList = await FirebaseFirestoreHelper.instance.getPopular();
     popularList.shuffle();
     newestList = await FirebaseFirestoreHelper.instance.getNewest();
-    newestList.shuffle;
+    newestList.shuffle();
     setState(() {
       isLoading = false;
     });

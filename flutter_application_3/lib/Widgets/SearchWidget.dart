@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/Pages/CartPage.dart';
+
 import 'package:flutter_application_3/Pages/SearchPage.dart';
 
 class SearchWidget extends StatefulWidget {

@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Constants/constants.dart';
 import 'package:flutter_application_3/Pages/Product_detail.dart';
 import 'package:flutter_application_3/Widgets/DiscountWidget.dart';
-import 'package:flutter_application_3/Widgets/HeaderWidget.dart';
+
 import 'package:flutter_application_3/provider/app_provider.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../Models/product_model/product_model.dart';
-import '../Widgets/CartBottomNavbar.dart';
-import '../Widgets/Custom_bottom_bar.dart';
 
 class CartPage extends StatefulWidget {
   CartPage({Key? key}) : super(key: key);

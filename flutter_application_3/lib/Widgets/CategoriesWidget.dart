@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Models/category_model/category_model.dart';
 import 'package:flutter_application_3/Pages/CategoryView.dart';
-import 'package:flutter_application_3/Pages/HomePage.dart';
 
 class CategoriesWidget extends StatelessWidget {
   final List<CategoryModel> categories;

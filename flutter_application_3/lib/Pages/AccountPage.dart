@@ -1,9 +1,14 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/Firebase/firebase_auth_helper.dart';
+import 'package:flutter_application_3/Pages/Change_password.dart';
 import 'package:flutter_application_3/Pages/FavoritePage.dart';
 import 'package:flutter_application_3/Pages/OrderPage.dart';
-import 'package:flutter_application_3/widgets/getuserdetails.dart';
+import 'package:flutter_application_3/Pages/edit_user.dart';
+import 'package:flutter_application_3/authentication/main_page.dart';
+
+import 'package:flutter_application_3/provider/app_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'HomePage.dart';
 
@@ -13,6 +18,7 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  final user = FirebaseAuth.instance.currentUser!;
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -53,66 +59,120 @@ class _AccountPageState extends State<AccountPage> {
     }
   }
 
-  final user = FirebaseAuth.instance.currentUser!;
-
-  List<String> docIDs = [];
-
-  /// get DocIDs
-  Future<List<String>> getDocIDs() async {
-    QuerySnapshot snapshot =
-        await FirebaseFirestore.instance.collection('users').get();
-    List<String> docIDs = [];
-    snapshot.docs.forEach((document) {
-      String docID = document.reference.id;
-      if (!docIDs.contains(docID)) {
-        docIDs.add(docID);
-      }
-    });
-    return docIDs;
-  }
-
   @override
   Widget build(BuildContext context) {
+    AppProvider appProvider = Provider.of<AppProvider>(context);
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Signed In as " + user.email!),
-            MaterialButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-              },
-              color: Colors.deepPurpleAccent[200],
-              child: Text(
-                "Đăng xuất",
-                style: TextStyle(fontSize: 15, color: Colors.white),
-              ),
-            ),
-            Expanded(
-              child: FutureBuilder<List<String>>(
-                future: getDocIDs(),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
-                  } else if (snapshot.hasError) {
-                    return Text('Đã xảy ra lỗi');
-                  } else {
-                    List<String> docIDs = snapshot.data ?? [];
-                    return ListView.builder(
-                      itemCount: docIDs.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: GetUserName(documentId: docIDs[index]),
-                        );
-                      },
-                    );
-                  }
-                },
-              ),
-            ),
-          ],
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Account",
+          style: TextStyle(
+            color: Colors.black,
+          ),
         ),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Column(
+              children: [
+                const Icon(
+                  Icons.person_outline,
+                  size: 120,
+                ),
+                Text(
+                  user.email!,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "hehe",
+                ),
+                const SizedBox(
+                  height: 12.0,
+                ),
+                SizedBox(
+                  width: 100,
+                  height: 30,
+                  child: ElevatedButton(
+                    child: Text("Chỉnh sửa"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EditPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Column(
+              children: [
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => OrderPage()),
+                    );
+                  },
+                  leading: const Icon(Icons.shopping_bag_outlined),
+                  title: const Text("Your Orders"),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FavoritePage()),
+                    );
+                  },
+                  leading: const Icon(Icons.favorite_outline),
+                  title: const Text("Favourite"),
+                ),
+                ListTile(
+                  onTap: () {},
+                  leading: const Icon(Icons.info_outline),
+                  title: const Text("About us"),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChangePassword()),
+                    );
+                  },
+                  leading: const Icon(Icons.change_circle_outlined),
+                  title: const Text("Change Password"),
+                ),
+                ListTile(
+                  onTap: () {
+                    FirebaseAuthHelper.instance.signOut();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MainPage(),
+                      ),
+                    );
+                    setState(() {});
+                  },
+                  leading: const Icon(Icons.exit_to_app),
+                  title: const Text("Log out"),
+                ),
+                const SizedBox(
+                  height: 12.0,
+                ),
+                const Text("Version 1.0.0")
+              ],
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {

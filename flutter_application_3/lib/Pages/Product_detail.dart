@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Constants/constants.dart';
-import 'package:flutter_application_3/Pages/OrderPage.dart';
-import 'package:flutter_application_3/Pages/AccountPage.dart';
+
 import 'package:flutter_application_3/Widgets/DiscountWidget.dart';
-import 'package:flutter_application_3/Widgets/HeaderWidget.dart';
+
 import 'package:flutter_application_3/provider/app_provider.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +12,7 @@ import '../Models/product_model/product_model.dart';
 
 import 'CartPage.dart';
 
+// ignore: must_be_immutable
 class ProductDetails extends StatefulWidget {
   ProductModel product;
 
@@ -317,10 +317,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   product.isFavourite = !product.isFavourite;
                                   if (product.isFavourite) {
                                     appProvider.addFavouriteProduct(product);
-                                    showMessage("oke");
                                   } else {
                                     appProvider.removeFavouriteProduct(product);
-                                    showMessage("faill");
                                   }
                                 });
                               },

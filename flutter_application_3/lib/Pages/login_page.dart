@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/Constants/constants.dart';
 import 'package:flutter_application_3/Pages/forgotpassword_page.dart';
+import 'package:flutter_application_3/resource_widgets/resource_widget.dart';
+import 'package:flutter_application_3/utlis/color_utlis.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../resource_widgets/resource_widget.dart';
-import '../utlis/color_utlis.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
@@ -20,10 +20,24 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
+    String email = _emailController.text.trim();
+    String password = _passwordController.text.trim();
+
+    if (email.isNotEmpty && password.isNotEmpty) {
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+
+        // Đăng nhập thành công, thực hiện các hành động khác nếu cần.
+      } catch (error) {
+        // Xử lý lỗi nếu có.
+      }
+    } else {
+      // Xử lý trường hợp email hoặc mật khẩu trống.
+      showMessage("Tài khoản hoặc mật khẩu sai!");
+    }
   }
 
   @override

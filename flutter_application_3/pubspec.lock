@@ -5,10 +5,17 @@ packages:
     dependency: transitive
     description:
       name: _flutterfire_internals
+<<<<<<< HEAD
       sha256: "8eb354cb8ebed8a9fdf63699d15deff533bc133128898afaf754926b57d611b6"
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+=======
+      sha256: d687576bb973e8d2539d0b4615d985336269a0dbe1b3984e937fd22d31406fb8
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.0"
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   async:
     dependency: transitive
     description:
@@ -73,6 +80,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
+<<<<<<< HEAD
   crypto:
     dependency: transitive
     description:
@@ -81,6 +89,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -97,6 +107,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+<<<<<<< HEAD
   ffi:
     dependency: transitive
     description:
@@ -137,6 +148,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.5.1"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   firebase_core:
     dependency: "direct main"
     description:
@@ -161,6 +174,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.5.0"
+<<<<<<< HEAD
   firebase_database:
     dependency: "direct main"
     description:
@@ -185,6 +199,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.3+1"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   firebase_messaging:
     dependency: "direct main"
     description:
@@ -209,6 +225,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.5.0"
+<<<<<<< HEAD
   firebase_storage:
     dependency: "direct main"
     description:
@@ -233,6 +250,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.1"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   flutter:
     dependency: "direct main"
     description: flutter
@@ -272,6 +291,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.2.1"
+<<<<<<< HEAD
   google_fonts:
     dependency: "direct main"
     description:
@@ -296,6 +316,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   intl:
     dependency: "direct main"
     description:
@@ -360,6 +382,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+<<<<<<< HEAD
   path_provider:
     dependency: transitive
     description:
@@ -408,6 +431,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.6"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   persistent_bottom_nav_bar:
     dependency: "direct main"
     description:
@@ -416,6 +441,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.2"
+<<<<<<< HEAD
   platform:
     dependency: transitive
     description:
@@ -424,6 +450,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -432,6 +460,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+<<<<<<< HEAD
   process:
     dependency: transitive
     description:
@@ -440,6 +469,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   provider:
     dependency: "direct main"
     description:
@@ -501,6 +532,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
+<<<<<<< HEAD
   typed_data:
     dependency: transitive
     description:
@@ -509,6 +541,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
   vector_math:
     dependency: transitive
     description:
@@ -517,6 +551,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+<<<<<<< HEAD
   win32:
     dependency: transitive
     description:
@@ -533,6 +568,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+=======
+>>>>>>> b81e9f5f34276a2bb285d3e00b04420406e152ff
 sdks:
   dart: ">=3.0.0 <4.0.0"
   flutter: ">=3.3.0"

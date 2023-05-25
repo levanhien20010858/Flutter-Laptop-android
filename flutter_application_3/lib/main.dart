@@ -5,9 +5,6 @@ import 'package:flutter_application_3/provider/app_provider.dart';
 import 'package:provider/provider.dart';
 import 'Firebase/firebase_options.dart';
 
-import 'Pages/HomePage.dart';
-import 'Widgets/Custom_bottom_bar.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

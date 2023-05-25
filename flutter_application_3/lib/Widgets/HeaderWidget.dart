@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/Pages/CartPage.dart';
-import 'package:flutter_application_3/Widgets/Custom_bottom_bar.dart';
+
 import 'package:flutter_application_3/Widgets/SearchWidget.dart';
 
 class HeaderWidget extends StatelessWidget {

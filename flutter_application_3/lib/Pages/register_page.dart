@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/Constants/constants.dart';
+import 'package:flutter_application_3/utlis/color_utlis.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../utlis/color_utlis.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -35,22 +35,51 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Future signUp() async {
     if (passwordConfirmed()) {
-      /// Tạo người dùng mới
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
-      );
+      String email = _emailController.text.trim();
+      String password = _passwordController.text.trim();
 
-      /// Thêm thông tin người dùng vào Firestore
-      addUserData(
-        _fullNameController.text.trim(),
-        _emailController.text.trim(),
-      );
+      if (email.isNotEmpty && password.isNotEmpty) {
+        try {
+          /// Tạo người dùng mới
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+            email: _emailController.text.trim(),
+            password: _passwordController.text.trim(),
+          );
+
+          /// Thêm thông tin người dùng vào Firestore
+          addUserData(
+            _fullNameController.text.trim(),
+            _emailController.text.trim(),
+          );
+
+          // Đăng nhập thành công, thực hiện các hành động khác nếu cần.
+        } catch (error) {
+          // Xử lý lỗi nếu có.
+        }
+      } else {
+        // Xử lý trường hợp email hoặc mật khẩu trống.
+        showMessage("Vui lòng nhâp đầy đủ!");
+      }
     }
   }
 
-  Future addUserData(String fullName, String email) async {
-    await FirebaseFirestore.instance.collection('users').add({
+  // Future<void> addUserData(String fullName, String email) async {
+  //   CollectionReference usersCollection =
+  //       FirebaseFirestore.instance.collection('users');
+
+  //   DocumentReference newDocument =
+  //       usersCollection.doc(); // Tạo một tài liệu mới với Document ID tự động
+
+  //   await newDocument.set({
+  //     'id': newDocument.id, // Thêm Document ID vào dữ liệu
+  //     'full name': fullName,
+  //     'email': email,
+  //   });
+  // }
+  Future<void> addUserData(String fullName, String email) async {
+    String userUid = FirebaseAuth.instance.currentUser!.uid;
+
+    await FirebaseFirestore.instance.collection('users').doc(userUid).set({
       'full name': fullName,
       'email': email,
     });
@@ -61,6 +90,7 @@ class _RegisterPageState extends State<RegisterPage> {
         _confirmpasswordController.text.trim()) {
       return true;
     } else {
+      showMessage("Mật khẩu nhập lại không trùng khớp!");
       return false;
     }
   }

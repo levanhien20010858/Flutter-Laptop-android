@@ -4,7 +4,6 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import 'package:flutter_application_3/Pages/CartPage.dart';
 import 'package:flutter_application_3/Pages/FavoritePage.dart';
 import 'package:flutter_application_3/Pages/HomePage.dart';
 

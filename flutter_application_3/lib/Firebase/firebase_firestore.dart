@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_3/Constants/constants.dart';
 import 'package:flutter_application_3/Models/product_model/product_model.dart';
+import 'package:flutter_application_3/Models/user_model/user_model.dart';
 import '../Models/category_model/category_model.dart';
 
 class FirebaseFirestoreHelper {
@@ -77,6 +79,29 @@ class FirebaseFirestoreHelper {
     }
   }
 
+  // Future<List<UserModel>> getUser() async {
+  //   try {
+  //     QuerySnapshot<Map<String, dynamic>> querySnapshot =
+  //         await _firebaseFirestore.collection("users").get();
+
+  //     List<UserModel> categoriesList =
+  //         querySnapshot.docs.map((e) => UserModel.fromJson(e.data())).toList();
+
+  //     return categoriesList;
+  //   } catch (e) {
+  //     showMessage(e.toString());
+  //     return [];
+  //   }
+  // }
+  // Future<UserModel> getUserInformation() async {
+  //   DocumentSnapshot<Map<String, dynamic>> querySnapshot =
+  //       await _firebaseFirestore
+  //           .collection("users")
+  //           .doc(FirebaseAuth.instance.currentUser!.uid)
+  //           .get();
+
+  //   return UserModel.fromJson(querySnapshot.data()!);
+  // }
   // Future<bool> uploadOrderedProductFirebase() async {
   //   try {
   //     _firebaseFirestore.collection("usersOders").doc();

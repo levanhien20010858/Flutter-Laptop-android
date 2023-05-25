@@ -4,14 +4,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../widgets/getuserdetails.dart';
 import 'package:flutter/foundation.dart';
 
-class AccountPage extends StatefulWidget {
-  const AccountPage({Key? key}) : super(key: key);
+class EditPage extends StatefulWidget {
+  const EditPage({Key? key}) : super(key: key);
 
   @override
-  State<AccountPage> createState() => _AccountPageState();
+  State<EditPage> createState() => _EditPageState();
 }
 
-class _AccountPageState extends State<AccountPage> {
+class _EditPageState extends State<EditPage> {
   final _fullNameController = TextEditingController();
   late String _currentUserId;
   late String _currentFullName;
@@ -39,8 +39,8 @@ class _AccountPageState extends State<AccountPage> {
 
       setState(() {
         _currentUserId = user.uid;
-        _currentFullName = userData.get('full name') ?? '';
-        _fullNameController.text = _currentFullName;
+        // _currentFullName = userData.get('full name') ?? '';
+        // _fullNameController.text = _currentFullName;
       });
     }
   }
