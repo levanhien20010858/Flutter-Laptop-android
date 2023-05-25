@@ -184,7 +184,7 @@ class _OrderPageState extends State<OrderPage> {
                                                   vertical: 10),
                                             ),
                                             Text(
-                                              "Laptop",
+                                              "Pro",
                                               style: TextStyle(
                                                 fontSize: 15,
                                               ),
@@ -203,8 +203,10 @@ class _OrderPageState extends State<OrderPage> {
                                                     //   color: Colors.black,
                                                     // ),
                                                     child: Text(
-                                                      singleProduct.qty
-                                                          .toString(),
+                                                      (singleProduct.qty != null
+                                                          ? singleProduct.qty
+                                                              .toString()
+                                                          : '1'),
                                                       style: TextStyle(
                                                         fontSize: 15,
                                                         fontWeight:
@@ -344,6 +346,104 @@ class _OrderPageState extends State<OrderPage> {
 }
 
 List<OrderModel> orderModel = [
+  OrderModel(
+    orderId: "12783178",
+    products: [
+      ProductModel(
+        image: [
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png"
+        ],
+        id: "6",
+        name: "lenovo-gaming-legion-5-15iah7h",
+        price: 20000000,
+        description: "hihihi",
+        isFavourite: true,
+        discount: 15,
+        sold: 150,
+      ),
+      ProductModel(
+        image: [
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png"
+        ],
+        id: "6",
+        name: "lenovo-gaming-legion-5-15iah7h",
+        price: 20000000,
+        description: "hihihi",
+        isFavourite: true,
+        discount: 15,
+        sold: 150,
+      ),
+      ProductModel(
+        image: [
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png"
+        ],
+        id: "6",
+        name: "lenovo-gaming-legion-5-15iah7h",
+        price: 20000000,
+        description: "hihihi",
+        isFavourite: true,
+        discount: 15,
+        sold: 150,
+      ),
+    ],
+    status: "pending",
+    totalPrice: 200000000,
+  ),
+  OrderModel(
+    orderId: "12783178",
+    products: [
+      ProductModel(
+        image: [
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png"
+        ],
+        id: "6",
+        name: "lenovo-gaming-legion-5-15iah7h",
+        price: 20000000,
+        description: "hihihi",
+        isFavourite: true,
+        discount: 15,
+        sold: 150,
+      ),
+      ProductModel(
+        image: [
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png"
+        ],
+        id: "6",
+        name: "lenovo-gaming-legion-5-15iah7h",
+        price: 20000000,
+        description: "hihihi",
+        isFavourite: true,
+        discount: 15,
+        sold: 150,
+      ),
+      ProductModel(
+        image: [
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png",
+          "assets/images/lenovo-gaming-legion-5-15iah7h-xam-dam-dd.png"
+        ],
+        id: "6",
+        name: "lenovo-gaming-legion-5-15iah7h",
+        price: 20000000,
+        description: "hihihi",
+        isFavourite: true,
+        discount: 15,
+        sold: 150,
+      ),
+    ],
+    status: "pending",
+    totalPrice: 200000000,
+  ),
   OrderModel(
     orderId: "12783178",
     products: [

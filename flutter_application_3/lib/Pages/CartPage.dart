@@ -165,7 +165,7 @@ class _CartPageState extends State<CartPage> {
                                                             vertical: 10),
                                                   ),
                                                   Text(
-                                                    "Laptop",
+                                                    "Pro",
                                                     style: TextStyle(
                                                       fontSize: 15,
                                                     ),
